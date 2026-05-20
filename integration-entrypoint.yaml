@@ -1,0 +1,36 @@
+integration_entrypoint:
+
+  system_name: Sextant Governance Routing Layer
+
+  role: >
+    Provides a structured governance translation interface for external systems
+    to interpret Index → Policy → Cascade → Execution decision flows.
+
+  input_contract:
+    accepted_sources:
+      - sextant-official-index
+      - spd-r-policy-system
+      - cascade-simulation-engine
+
+  output_contract:
+    type: governance_decision_specification
+    format: structured_yaml_response
+
+  exposed_interfaces:
+
+    interface_1:
+      name: policy_resolution_api
+      purpose: Convert index context into SPD-R policy rules
+
+    interface_2:
+      name: cascade_risk_api
+      purpose: Return system impact simulation results
+
+    interface_3:
+      name: execution_decision_api
+      purpose: Provide allow/block governance decision
+
+  constraints:
+    - non_executable_within_repo
+    - reference_only_design_layer
+    - no_runtime_enforcement
