@@ -1,0 +1,42 @@
+index_interpreter:
+
+  purpose: >
+    Translates Sextant Protocol Index structures into governance routing signals
+    for sector-level interpretation across SPD-R, Cascade, and Engine layers.
+
+  input_sources:
+    - sextant-official-index
+    - sector-routing-layer
+    - spd-r-policy-definitions
+
+  output:
+    type: routing_signal
+    format: structured_policy_context
+
+  interpretation_rules:
+
+    rule_1:
+      name: sector_resolution
+      description: >
+        Identify which sector context applies to an action or system node.
+
+    rule_2:
+      name: cascade_context_binding
+      description: >
+        Attach cascade sensitivity profile based on sector classification.
+
+    rule_3:
+      name: policy_mapping
+      description: >
+        Map abstract index definitions into executable governance constraints.
+
+    rule_4:
+      name: risk_translation
+      description: >
+        Convert structural dependency into risk-weighted interpretation signals.
+
+  output_schema:
+    sector: string
+    cascade_profile: object
+    policy_constraints: array
+    risk_classification: string
