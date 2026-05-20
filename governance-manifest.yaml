@@ -1,0 +1,34 @@
+governance_manifest:
+
+  system_name: Sextant Governance Routing Layer
+
+  version: v1.0
+
+  purpose: >
+    Defines how governance signals from the Sextant Index are transformed into
+    enforceable execution decisions through interpretation, policy adaptation,
+    cascade modelling, and execution binding.
+
+  architecture_chain:
+
+    - index_interpreter
+    - spd_r_adapter
+    - cascade_context_model
+    - execution_policy_bindings
+
+  sector_routing_layer:
+    location: /sector-routing/
+    purpose: >
+      Defines domain-specific governance behaviour across sectors.
+
+  system_constraints:
+
+    rule_1: no_cross_layer_decision_authority
+    rule_2: deterministic_flow_only
+    rule_3: fail_closed_execution_model
+    rule_4: no_runtime_execution_inside_this_repo
+
+  output_definition:
+    type: governance_decision_specification
+    nature: non-operational
+    usage: reference_and_integration_layer_only
