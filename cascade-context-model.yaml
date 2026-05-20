@@ -1,0 +1,41 @@
+cascade_context_model:
+
+  purpose: >
+    Models how governance decisions and system actions propagate through
+    interconnected dependencies across different sectors.
+
+  input:
+    - spd_r_enforced_policy_profile
+    - sector_routing_layer
+    - system_dependency_graph
+
+  output:
+    type: cascade_risk_profile
+
+  cascade_rules:
+
+    rule_1:
+      name: dependency_amplification
+      description: >
+        Measures how strongly a single action affects downstream systems.
+
+    rule_2:
+      name: cross_sector_propagation
+      description: >
+        Evaluates whether failure spreads beyond its originating sector.
+
+    rule_3:
+      name: latency_accumulation
+      description: >
+        Models delay between cause and observable system failure.
+
+    rule_4:
+      name: systemic_blast_radius
+      description: >
+        Defines maximum impact zone of a single execution event.
+
+  output_schema:
+    cascade_score: float
+    blast_radius: string
+    affected_nodes: array
+    propagation_depth: integer
