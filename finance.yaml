@@ -1,0 +1,16 @@
+sector: finance
+
+risk_model_adjustments:
+  cascade_sensitivity_multiplier: 1.3
+  observability_threshold: high
+  execution_tolerance: low
+
+rule_behavior:
+  access_control: strict
+  transaction_validation: mandatory_dual_check
+  anomaly_detection: real_time_required
+
+notes:
+  - Financial systems prioritize containment over speed
+  - Auditability is mandatory for all actions
+  - Cascade risk is treated as amplified by default
