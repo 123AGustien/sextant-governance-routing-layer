@@ -1,0 +1,40 @@
+spd_r_adapter:
+
+  purpose: >
+    Translates index-level governance signals into enforceable SPD-R rule constraints
+    across different sector contexts.
+
+  input:
+    - index_interpreter_output
+    - sector_routing_layer
+
+  output:
+    type: enforced_policy_profile
+
+  adaptation_rules:
+
+    rule_1:
+      name: sector_policy_binding
+      description: >
+        Bind sector classification to corresponding SPD-R rule set.
+
+    rule_2:
+      name: constraint_enforcement_scaling
+      description: >
+        Adjust strictness of governance rules based on cascade sensitivity.
+
+    rule_3:
+      name: execution_permission_filter
+      description: >
+        Define what actions are allowed before engine execution layer.
+
+    rule_4:
+      name: risk_alignment_mapping
+      description: >
+        Align interpreted risk with enforceable system constraints.
+
+  output_schema:
+    allowed_actions: array
+    blocked_actions: array
+    enforcement_level: string
+    risk_threshold: float
