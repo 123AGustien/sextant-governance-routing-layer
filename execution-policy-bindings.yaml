@@ -1,0 +1,40 @@
+execution_policy_bindings:
+
+  purpose: >
+    Converts cascade risk profiles and SPD-R enforcement outputs into
+    executable system-level allow/block decisions.
+
+  input:
+    - cascade_risk_profile
+    - spd_r_enforced_policy_profile
+
+  output:
+    type: execution_decision_layer
+
+  binding_rules:
+
+    rule_1:
+      name: risk_threshold_enforcement
+      description: >
+        Blocks execution if cascade risk exceeds defined threshold.
+
+    rule_2:
+      name: policy_priority_override
+      description: >
+        SPD-R enforcement rules override cascade recommendations when stricter.
+
+    rule_3:
+      name: safe_execution_gate
+      description: >
+        Only allows execution when both policy and cascade layers approve.
+
+    rule_4:
+      name: fail_closed_behavior
+      description: >
+        Default system state is BLOCK if uncertainty exists.
+
+  output_schema:
+    decision: string
+    reason: string
+    risk_score: float
+    allowed: boolean
