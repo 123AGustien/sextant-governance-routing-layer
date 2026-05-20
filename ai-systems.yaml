@@ -1,0 +1,17 @@
+sector: ai-systems
+
+risk_model_adjustments:
+  cascade_sensitivity_multiplier: 1.6
+  observability_threshold: medium
+  execution_tolerance: medium
+
+rule_behavior:
+  access_control: adaptive
+  model_output_validation: required
+  tool_execution_gating: strict
+  autonomy_limit: bounded
+
+notes:
+  - AI systems require stricter control on downstream execution than financial systems
+  - Cascade risk is higher due to non-deterministic outputs
+  - Human override path must always exist
